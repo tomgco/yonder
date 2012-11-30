@@ -1,8 +1,10 @@
 var url = require('url')
-  ,express = require('express')
+  , http = require('http')
+  , express = require('express')
   , yonder = require('./lib/yonder').createYonder()
-  , app = module.exports = express.createServer()
-  , io = require('socket.io').listen(app);
+  , app = module.exports = express()
+  , server = http.createServer(app)
+  , io = require('socket.io').listen(server);
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -100,5 +102,5 @@ app.put('/:yindow/:pane/', setPaneFromPut);
 app.post('/:yindow/:pane/hsplit', hsplit);
 app.post('/:yindow/:pane/vsplit', vsplit);
 
-app.listen(4031);
-console.log('Yonder started - http://localhost:%d', app.address().port);
+server.listen(4031);
+console.log('Yonder started - http://localhost:%d', server.address().port);
