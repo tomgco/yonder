@@ -1,26 +1,31 @@
 {
-	"author": "Paul Serby <paul@serby.net>",
-	"name": "Yonder",
-	"description": "A remote browser management service",
-	"version": "0.1.0",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:serby/yonder"
-	},
-	"bin": {
-		"yonder": "./bin/yonder"
-	},
-	"main": "server.js",
-	"scripts": {
-		"test": "mocha -r should"
-	},
-	"engines": {
-		"node": ">0.4.0"
-	},
-	"dependencies": {
-		"mocha": "*",
-		"should": "*"
-	},
-	"devDependencies": {
-	}
+  "author": "Paul Serby <paul@serby.net>",
+  "name": "Yonder",
+  "description": "A remote browser management service",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:serby/yonder"
+  },
+  "bin": {
+    "yonder": "./bin/yonder"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha -r should"
+  },
+  "engines": {
+    "node": ">0.8.0"
+  },
+  "dependencies": {
+    "lodash": "~0.10.0",
+    "express": "~3.0.3",
+    "socket.io": "~0.9.11",
+    "stylus": "~0.31.0",
+    "jade": "~0.27.7"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
 }
